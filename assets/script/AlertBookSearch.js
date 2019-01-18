@@ -42,7 +42,7 @@ BookAlert.show = function (enterCallBack, animSpeed) {
         var cbFadeOut = cc.callFunc(self.onFadeOutFinish, self);
         var cbFadeIn = cc.callFunc(self.onFadeInFinish, self);
         self.actionFadeIn = cc.sequence(cc.spawn(cc.fadeTo(BookAlert._animSpeed, 255), cc.scaleTo(BookAlert._animSpeed, 1.0)), cbFadeIn);
-        self.actionFadeOut = cc.sequence(cc.spawn(cc.fadeTo(BookAlert._animSpeed, 0), cc.scaleTo(BookAlert._animSpeed, 2.0)), cbFadeOut);
+        self.actionFadeOut = cc.sequence(cc.spawn(cc.fadeTo(BookAlert._animSpeed, 0), cc.scaleTo(0, 0)), cbFadeOut);
 
         // 获取子节点
         BookAlert._book1 = cc.find("Book1", alert);
