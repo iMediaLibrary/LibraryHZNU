@@ -5,6 +5,7 @@ var AlertWarn = {
     _enterButton:null,   // 确定按钮
     _enterCallBack:null,   // 回调事件
     _animSpeed:0.3,    // 动画速度
+
 };
 
 /**
@@ -12,8 +13,9 @@ var AlertWarn = {
  * enterCallBack:   确定点击事件回调  function 类型.
  * neeCancel:       是否展示取消按钮 bool 类型 default YES.
  * duration:        动画速度 default = 0.3.
+ 
 */
-AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
+AlertWarn.show = function (title,detailString,  enterCallBack, animSpeed) {
 
     
 
@@ -25,7 +27,8 @@ AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
 
     // 
     AlertWarn._animSpeed = animSpeed ? animSpeed : AlertWarn._animSpeed;
-
+    
+  
     // 加载 prefab 创建
     cc.loader.loadRes("Alert", cc.Prefab, function (error, prefab) {
 
@@ -52,7 +55,10 @@ AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
         AlertWarn._enterButton = cc.find("known/Know", alert);
 
         // 添加点击事件
-        AlertWarn._enterButton.on('click', self.onButtonClicked, self);
+      
+            AlertWarn._enterButton.on('click', self.onButtonClicked, self);
+       
+  
 
         // 父视图
         AlertWarn._alert.parent = cc.find("Canvas");
@@ -75,6 +81,7 @@ AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
         // 内容
         AlertWarn._detailLabel.string = detailString;
         AlertWarn._title.string = title;
+       
 
     };
 
@@ -103,13 +110,10 @@ AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
         self.onDestory();
     };
 
-    // 按钮点击事件
+   
     self.onButtonClicked = function(event){
-        
-        self.startFadeOut();
-        
+            self.startFadeOut();
     };
-
   
 
     // 销毁 alert (内存管理还没搞懂，暂且这样写吧~v~)
