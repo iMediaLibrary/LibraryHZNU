@@ -8,7 +8,8 @@ cc.Class({
             type:cc.AudioClip
         }
 
-        
+
+
     },
 
     // LIFE-CYCLE CALLBACKS:
