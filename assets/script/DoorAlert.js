@@ -6,7 +6,7 @@ var DoorAlert = {
     _enterCallBack:null,   // 回调事件
     _animSpeed:0.3,    // 动画速度
     _flag: 0,
-    //_senceName: null,
+    
 };
 
 /**
@@ -115,14 +115,14 @@ DoorAlert.show = function (title,detailString,  enterCallBack, animSpeed,flag) {
     };
 
     //转换场景
-    self.loadNextSence = function (senceName) {
-        cc.director.loadScene(senceName);
+    self.loadNextScene = function (sceneName) {
+        cc.director.loadScene(sceneName);
     };
 
     // 按钮点击事件
     self.onButtonClicked = function(event){
         
-            self.loadNextSence("CheckAndBookSearch");
+            self.loadNextScene("CheckAndBookSearch");
       
         
     };
@@ -144,6 +144,5 @@ DoorAlert.show = function (title,detailString,  enterCallBack, animSpeed,flag) {
         DoorAlert._enterButton = null;
         DoorAlert._animSpeed = 0.3;
         DoorAlert._flag = 0;
-        DoorAlert._senceName = null;
     };
 };

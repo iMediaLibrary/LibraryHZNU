@@ -7,7 +7,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad:function () {},
+    onLoad:function () {
+        cc.director.preloadScene("CheckAndBookSearch",function() {
+            console.log("preLoadNext.");
+        });
+    },
 
     //从出口进入
     showWarning:function() {
@@ -25,6 +29,7 @@ cc.Class({
 
     //刷卡进入
     showDoorEnter:function() {
+        
         DoorAlert.show("嘀嘀","刷卡成功！",  null, 0.3, 1);
     }
 
