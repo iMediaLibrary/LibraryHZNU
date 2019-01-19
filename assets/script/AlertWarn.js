@@ -15,6 +15,8 @@ var AlertWarn = {
 */
 AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
 
+    
+
     // 引用
     var self = this;
 
@@ -103,13 +105,12 @@ AlertWarn.show = function (title,detailString, enterCallBack, animSpeed) {
 
     // 按钮点击事件
     self.onButtonClicked = function(event){
-        if(event.target.name == "enterButton"){
-            if(self._enterCallBack){
-                self._enterCallBack();
-            }
-        }
+        
         self.startFadeOut();
+        
     };
+
+  
 
     // 销毁 alert (内存管理还没搞懂，暂且这样写吧~v~)
     self.onDestory = function () {

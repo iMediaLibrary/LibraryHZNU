@@ -15,6 +15,12 @@ cc.Class({
     },
     showBookAlert(){
         BookAlert.show();
+    },
+    showCheckAlertTip:function (){
+        AlertWarn.show("提醒","吃的❌ 过夜❌");
+    },
+    showWayChooseAlert(){
+        BookSearchWayAlert.show();
     }
 
     // update (dt) {},

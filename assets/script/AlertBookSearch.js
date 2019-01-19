@@ -1,8 +1,8 @@
 var BookAlert = {
     _alert: null,           // prefab
-   _book1:null,
-   _book2:null,
-   _book3:null,
+    _book1:null,
+    _book2:null,
+    _book3:null,
     _enterCallBack:null,   // 回调事件
     _animSpeed:0.3,    // 动画速度
 };
@@ -121,6 +121,7 @@ BookAlert.show = function (enterCallBack, animSpeed) {
         console.log("000000002");
         self.startFadeOut();
         AlertWarn.show("恭喜","书在2楼209");
+        Index.isBookAddress = true;
         
     };
     self.onButtonBook3Clicked = function(event){
@@ -132,6 +133,7 @@ BookAlert.show = function (enterCallBack, animSpeed) {
         console.log("00000000000000003");
         self.startFadeOut();
         AlertWarn.show("沙雕","不是这本");
+
     };
 
     // 销毁 alert (内存管理还没搞懂，暂且这样写吧~v~)
